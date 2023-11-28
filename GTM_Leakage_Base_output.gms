@@ -155,6 +155,11 @@ $include QFPLC.csv
 $offdelim
 ;
 
+Parameters
+ANNSLASHC(CTRY,LC1,T)
+QFPLC(CTRY,LC1,T)
+QFSLC(CTRY,LC1,T)
+;
 ANNSLASHC(CTRY,LC1,T) = ANNSLASHC_N2(CTRY,LC1,T,'1');
 QFPLC(CTRY,LC1,T) = QFPLC_N2(CTRY,LC1,T,'1');
 QFSLC(CTRY,LC1,T) = QFSLC_N2(CTRY,LC1,T,'1');
@@ -548,6 +553,7 @@ SUM(LC1,SUM(A1,YACRE2.L(CTRY,LC1,A1,T)))+ FORACI1(CTRY,T));
 *******************************************************************************
 *PRINT OUTPUT TO PUT FILE AND DO CARBON CALCULATIONS BELOW
 *******************************************************************************
+SET RC /1*13/; 
 
 PARAMETER PANDQ(RC,T);
 PANDQ(RC,T) = FPS(T)$(ORD(RC) EQ 1) + TAFS(T)$(ORD(RC) EQ 2) +
@@ -946,7 +952,7 @@ LOOP(T, PUT / T.TE(T); LOOP(LC1, PUT DEDBIOAREALC('1',LC1,T)););
 *******************************************************************************
 *******************************************************************************
 
-*carbon yield functions – use original yield functions.
+*carbon yield functions Â– use original yield functions.
 PARAMETER CYIELD (CTRY, LC1,A1,T) yield function;
 CYIELD(CTRY,LC1,A1,T) = YIELDORIG(CTRY,LC1,A1,T);
 
@@ -959,7 +965,7 @@ CYLDINAC(CTRY,LC1,A1,T) = CYIELD(CTRY,LC1,A1,T)$(ORD(A1) LT 10) +
 
 ****    Standing Timber calculated with Smith, Heath et al, for US ****
 *
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
 *********************************************************
 
 PARAMETER ABVCHEATH(CTRY,LC1,T);
@@ -1020,8 +1026,8 @@ CYLDINAC(CTRY,LC1,A1,T))] $(TROPINAC(CTRY,LC1) EQ 1)
 
 ****    Standing Dead Timber calculated with Smith, Heath et al, for US ****
 *
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
-* Dead-tree mass density = (Estimated live-tree mass density) · A · e(-((volume/B)^C))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
+* Dead-tree mass density = (Estimated live-tree mass density) Â· A Â· e(-((volume/B)^C))
 
 *********************************************************
 
@@ -1321,7 +1327,7 @@ SUM(A1,YACRIN1.L(CTRY,LC1,A1,T)*CYLDINAC(CTRY,LC1,A1,T))] $(TROPINAC(CTRY,LC1) E
 
 **** Standing Timber calculated with Smith, Heath et al, for US ****
 *       calculated for each age class
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
 *********************************************************
 
 PARAMETER ABVCHEATHAGE(CTRY,LC1,A1,T);
@@ -2286,11 +2292,11 @@ FOROUTP_Base(CTRY,LC1,T)=FOROUTP2INPUT(CTRY,LC1,T,'1');
 *PARAMETER CPOLICY(CTRY,LC1,A1);
 *CPOLICY(CTRY,LC1,A1)= FORINV2(CTRY,LC1,A1)*FOROUTP(CTRY,LC1,T);
 
-*carbon yield functions – use original yield functions so no need to restate here
+*carbon yield functions Â– use original yield functions so no need to restate here
 
 ****    Standing Timber calculated with Smith, Heath et al, for US ****
 *
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
 *********************************************************
 
 PARAMETER ABVCHEATHL(CTRY,LC1,T);
@@ -2316,8 +2322,8 @@ CPARAM2(CTRY,LC1,'13'))
 
 ****    Standing Dead Timber calculated with Smith, Heath et al, for US ****
 *
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
-* Dead-tree mass density = (Estimated live-tree mass density) · A · e(-((volume/B)^C))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
+* Dead-tree mass density = (Estimated live-tree mass density) Â· A Â· e(-((volume/B)^C))
 
 *********************************************************
 
@@ -2490,7 +2496,7 @@ PARAM2(CTRY,LC1,'8')*((MGMT1.L(CTRY,LC1,A1,T)+1+EPSILON)**FINPTEL(CTRY,LC1,T)))]
 
 **** Standing Timber calculated with Smith, Heath et al, for US ****
 *       calculated for each age class
-*       Live-tree mass density = F · (G + (1-e(-volume/H)))
+*       Live-tree mass density = F Â· (G + (1-e(-volume/H)))
 *********************************************************
 
 PARAMETER ABVCHEATHAGEL(CTRY,LC1,A1,T);
@@ -2781,7 +2787,7 @@ DISPLAY TSOIL1;
 
 
 FILE  GTM_LEAKAGE_BASE_OUTPUT; PUT  GTM_LEAKAGE_BASE_OUTPUT;  GTM_LEAKAGE_BASE_OUTPUT.PC=5;
-PUT / 'REGIONAL ABOVEGROUND C –TOTAL PROJECT (million tons C)';
+PUT / 'REGIONAL ABOVEGROUND C Â–TOTAL PROJECT (million tons C)';
 PUT / 'YEAR';
 PUT 'US';
 PUT 'CHINA';
@@ -2802,7 +2808,7 @@ PUT 'E ASIA';
 LOOP(T, PUT / T.TE(T);LOOP(CTRY, PUT TABVCLIVEANDDEADL(CTRY,T)););
 
 FILE  GTM_LEAKAGE_BASE_OUTPUT; PUT  GTM_LEAKAGE_BASE_OUTPUT;  GTM_LEAKAGE_BASE_OUTPUT.PC=5;
-PUT / 'REGIONAL MARKET C –TOTAL PROJECT (million tons C)';
+PUT / 'REGIONAL MARKET C Â–TOTAL PROJECT (million tons C)';
 PUT / 'YEAR';
 PUT 'US';
 PUT 'CHINA';
@@ -2823,7 +2829,7 @@ PUT 'E ASIA';
 LOOP(T, PUT / T.TE(T);LOOP(CTRY, PUT TMKTCNEWL(CTRY,T)););
 
 FILE  GTM_LEAKAGE_BASE_OUTPUT; PUT  GTM_LEAKAGE_BASE_OUTPUT;  GTM_LEAKAGE_BASE_OUTPUT.PC=5;
-PUT / 'REGIONAL SOIL C –TOTAL PROJECT (million tons C)';
+PUT / 'REGIONAL SOIL C Â–TOTAL PROJECT (million tons C)';
 PUT / 'YEAR';
 PUT 'US';
 PUT 'CHINA';
