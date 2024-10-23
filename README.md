@@ -1,3 +1,9 @@
+## Overview to using GTM files
+
+Complete instructions in the Apollo Technical Methodology (draft here: https://www.notion.so/renoster/Apollo-New-England-Technical-Write-up-8b79cf8ec2e04b5aa4b5eb75e0d385ea). 
+
+ORIGINAL README BELOW:
+
 # GTM Leakage Code Details
 This file provides information on the code used in the following paper:
 Daigneault, A., B. Sohngen, E. Belair, P.W. Ellis. (2023). A Global Assessment of Regional Forest Carbon Leakage. Preprint available at:  https://www.researchsquare.com/article/rs-3596881/v1 
