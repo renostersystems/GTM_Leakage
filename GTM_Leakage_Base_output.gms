@@ -3,7 +3,7 @@ Global Timber Model
 Code originally written by B. Sohngen, sohngen.1@osu.edu
 Code edited by A. Daigneault, adam.daigneault@maine.edu
 
-Developed for leakage analysis, November 2023
+Developed for leakage analysis, November 2024
 
 This file produces output for the no forest carbon project baseline
 Note: Need to restart GTM_Leakage_Base.g00 and include
