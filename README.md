@@ -1,6 +1,6 @@
 # GTM Leakage Code Details
 This file provides information on the code used in the following paper:
-Daigneault, A., B. Sohngen, E. Belair, P.W. Ellis. (2023). A Global Assessment of Regional Forest Carbon Leakage. Preprint available at:  https://www.researchsquare.com/article/rs-3596881/v1 
+Daigneault, A., B. Sohngen, E. Belair, P.W. Ellis. (2024). A Global Assessment of Regional Forest Carbon Leakage. Preprint available at:  https://www.researchsquare.com
 
 ## Overview
 The GitHub repository contains code for the Global Timber Model (GTM) programmed for the General Algebraic Modeling System (GAMS). Specifically, it contains the original model calibration, baseline, and scenario code (.gms files), the parameter sets used to run that code (.csv files), and code to generate model output.  The scenarios in this paper were run using GAMS 29.1.0 using a series of ‘save’ and ‘restart’ commands and solved using the MINOS solver. Note that running the code in other versions of GAMS might generate slightly different estimates. 
