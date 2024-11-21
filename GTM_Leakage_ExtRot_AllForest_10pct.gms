@@ -2,7 +2,7 @@ $ONTEXT;
 Code originally written by B. Sohngen, sohngen.1@osu.edu
 Code edited by A. Daigneault, adam.daigneault@maine.edu
 
-Developed for leakage analysis, November 2023
+Developed for leakage analysis, November 2024
 
 This file runs the leakage model scenario for extended rotations
 Need to restart from: GTM_Leakage_Calibration.g00
