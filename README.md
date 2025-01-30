@@ -1,6 +1,14 @@
 ## Overview to using GTM files
 
-Complete instructions in the Apollo Technical Methodology (draft here: https://www.notion.so/renoster/Apollo-New-England-Technical-Write-up-8b79cf8ec2e04b5aa4b5eb75e0d385ea). 
+This repository contains an updated version of the extended rotation forest carbon scenario file used by Daigneault et al. (2024). The original the extended rotation forest carbon scenario file is still included here for reference, and was originally published to GitHub by Daigneault et al. (2024) at https://github.com/AdamDaigneault/GTM_Leakage. 
+
+The updated extended rotation scenario file updates assumptions in the original file to reflect the current rules and extent of forest carbon markets. Updating these assumptions allows the theoretical findings in the published code to be applied directly to estimate leakage from actual forest carbon projects: 
+
+The original extended rotation scenario code assumes that forests can either be enrolled in a permanent set-aside project or in an extended-rotation forest carbon project. Functionally, however, permanent set-aside projects in forest carbon markets have a mandated rotation extension of 100 years, and are modeled as such in the current code. The original code also makes the simplifying assumption that all forest types in all regions receive a rotation extension of ten years when enrolled in a project; the updated code assigns rotation extensions based on the actual rotation extension lengths required by the forest carbon methodologies most common in each forest type/region. The most common forest carbon methodologies in each forest type/ region are based on this public map of global project occurence: https://zenodo.org/records/11459391. 
+
+The original extended rotation scenario code assumes a forest carbon project prevalence of 10% among unprotected forests, globally. Using the public forest carbon project database referenced above to identify global enrolled forest area, and adjusting this area downwards by 50% to reflect the likely area experiencing forest management change as a result of project enrollment, the updated scenario code uses a global project prevalence (also refered to as "global implementation rate") of 4%. 
+
+The updated scenario file should be run as described in the original "read me" text below.
 
 ORIGINAL README BELOW:
 
