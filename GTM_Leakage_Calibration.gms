@@ -3,7 +3,7 @@ Global Timber Model
 Code originally written by B. Sohngen, sohngen.1@osu.edu
 Code edited by A. Daigneault, adam.daigneault@maine.edu
 
-Developed for leakage analysis, November 2023
+Developed for leakage analysis, November 2024
 
 $OFFTEXT;
 
@@ -526,7 +526,7 @@ LOOP(T,LOOP(A1,YIELD2(CTRY,LC1,A1+1,T+1)=YIELD2(CTRY,LC1,A1,T)+
 PARAMETER YIELDORIG(CTRY,LC1,A1,T);
 YIELDORIG(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
-*Quality adjustment – accounts for value differences across logs from different regions.
+*Quality adjustment Â– accounts for value differences across logs from different regions.
 YIELD2(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T)*PARAM3(CTRY,LC1,'4');
 
 
@@ -621,7 +621,7 @@ DISPLAY SWPERC2A, YIELD2;
 PARAMETER YIELD2F(CTRY,LC1,A1);
 YIELD2F(CTRY,LC1,A1)=SUM[T$(FINT(T)),YIELD2(CTRY,LC1,A1,T)$(FINT(T))];
 
-*create inaccessible yield functions – already adjusted for merch proportion
+*create inaccessible yield functions Â– already adjusted for merch proportion
 PARAMETER YLDINAC(CTRY,LC1,A1,T);
 YLDINAC(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
@@ -1118,7 +1118,7 @@ SUM[LC1$(TROPINAC(CTRY,LC1) EQ 1),
         SUM(A1, (1-PROPPULP(CTRY,LC1,T) +EPSILON)*
 (ACHR3(CTRY,LC1,A1,T) +EPSILON)*YIELD2(CTRY,LC1,A1,T)*0.5*PARAM2(CTRY,LC1,'8'))]+
 
-*tropical inacessible – harvest
+*tropical inacessible Â– harvest
 SUM[LC1$(TROPINAC(CTRY,LC1) EQ 1),
         (1-PROPPULP(CTRY,LC1,T) +EPSILON)*PARAM2(CTRY,LC1,'8')*
 SUM(A1,(ACHRIN1(CTRY,LC1,A1,T) +EPSILON)*YLDINAC(CTRY,LC1,A1,T))]+
@@ -1176,7 +1176,7 @@ SUM[LC1$(TROPINAC(CTRY,LC1) EQ 1),
         SUM(A1, (PROPPULP(CTRY,LC1 ,T) +EPSILON)*
         (ACHR3(CTRY,LC1,A1,T) +EPSILON)*YIELD2(CTRY,LC1,A1,T)*0.5*PARAM2(CTRY,LC1,'8'))]+
 
-*tropical inacessible – harvest
+*tropical inacessible Â– harvest
 SUM[LC1$(TROPINAC(CTRY,LC1) EQ 1),
         (PROPPULP(CTRY,LC1 ,T) +EPSILON)*PARAM2(CTRY,LC1,'8')*
        SUM(A1,(ACHRIN1(CTRY,LC1,A1,T) +EPSILON)*YLDINAC(CTRY,LC1,A1,T))]+
@@ -1667,7 +1667,7 @@ LOOP(T,LOOP(A1,YIELD2(CTRY,LC1,A1+1,T+1)=YIELD2(CTRY,LC1,A1,T)+
 PARAMETER YIELDORIG(CTRY,LC1,A1,T);
 YIELDORIG(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
-*Quality adjustment – accounts for value differences across logs from different regions.
+*Quality adjustment Â– accounts for value differences across logs from different regions.
 YIELD2(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T)*PARAM3(CTRY,LC1,'4');
 
 
@@ -1762,7 +1762,7 @@ DISPLAY SWPERC2A, YIELD2;
 PARAMETER YIELD2F(CTRY,LC1,A1);
 YIELD2F(CTRY,LC1,A1)=SUM[T$(FINT(T)),YIELD2(CTRY,LC1,A1,T)$(FINT(T))];
 
-*create inaccessible yield functions – already adjusted for merch proportion
+*create inaccessible yield functions Â– already adjusted for merch proportion
 PARAMETER YLDINAC(CTRY,LC1,A1,T);
 YLDINAC(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
@@ -2150,7 +2150,7 @@ LOOP(T,LOOP(A1,YIELD2(CTRY,LC1,A1+1,T+1)=YIELD2(CTRY,LC1,A1,T)+
 PARAMETER YIELDORIG(CTRY,LC1,A1,T);
 YIELDORIG(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
-*Quality adjustment – accounts for value differences across logs from different regions.
+*Quality adjustment Â– accounts for value differences across logs from different regions.
 YIELD2(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T)*PARAM3(CTRY,LC1,'4');
 
 
@@ -2245,7 +2245,7 @@ DISPLAY SWPERC2A, YIELD2;
 PARAMETER YIELD2F(CTRY,LC1,A1);
 YIELD2F(CTRY,LC1,A1)=SUM[T$(FINT(T)),YIELD2(CTRY,LC1,A1,T)$(FINT(T))];
 
-*create inaccessible yield functions – already adjusted for merch proportion
+*create inaccessible yield functions Â– already adjusted for merch proportion
 PARAMETER YLDINAC(CTRY,LC1,A1,T);
 YLDINAC(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
@@ -2633,7 +2633,7 @@ LOOP(T,LOOP(A1,YIELD2(CTRY,LC1,A1+1,T+1)=YIELD2(CTRY,LC1,A1,T)+
 PARAMETER YIELDORIG(CTRY,LC1,A1,T);
 YIELDORIG(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
-*Quality adjustment – accounts for value differences across logs from different regions.
+*Quality adjustment Â– accounts for value differences across logs from different regions.
 YIELD2(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T)*PARAM3(CTRY,LC1,'4');
 
 
@@ -2728,7 +2728,7 @@ DISPLAY SWPERC2A, YIELD2;
 PARAMETER YIELD2F(CTRY,LC1,A1);
 YIELD2F(CTRY,LC1,A1)=SUM[T$(FINT(T)),YIELD2(CTRY,LC1,A1,T)$(FINT(T))];
 
-*create inaccessible yield functions – already adjusted for merch proportion
+*create inaccessible yield functions Â– already adjusted for merch proportion
 PARAMETER YLDINAC(CTRY,LC1,A1,T);
 YLDINAC(CTRY,LC1,A1,T) = YIELD2(CTRY,LC1,A1,T);
 
